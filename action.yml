@@ -1,0 +1,45 @@
+name: "MOU Deploy"
+description: "Deploys applications using different providers, like Kubernetes Helm"
+author: "MindDoc Health GmbH"
+branding:
+  icon: "cloud"
+  color: "green"
+inputs:
+  # Deployment variables
+  config:
+    description: >-
+      The app deployment configuration in JSON or YAML format
+    required: true
+  environment:
+    description: The target deploy environment
+    required: true
+  helm:
+    description: >-
+      The helm repository config in JSON or YAML format
+    required: false
+  kubernetes:
+    description: >-
+      The kubeconfig file content for kubectl.
+      See https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/
+      Giving this parameter will enable a kubernetes deploy.
+    required: false
+  sentry:
+    description: >-
+      The sentry configuration in JSON or YAML format to update the sentry project
+      with a successful deployment.
+      Giving this parameter will enable the sentry integration.
+    required: false
+  slack:
+    description: >-
+      The slack configuration in JSON or YAML format to push notifications to a
+      given Slack channel.
+    required: false
+  version:
+    description: >-
+      The version to deploy. It will be sent to sentry, if sentry was configured.
+      If not provided, version will be detected from the image tag specified in the config values,
+      or from the current commit sha.
+    required: false
+runs:
+  using: "docker"
+  image: "Dockerfile"

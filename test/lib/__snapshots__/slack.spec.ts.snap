@@ -1,0 +1,147 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`slack notify deployment error  1`] = `
+Array [
+  Object {
+    "blocks": Array [
+      Object {
+        "text": Object {
+          "text": "I have FAILED to deploy *<https://github.com/myOwner/myRepo/commit/6dcb09b5b57875f334f61aebed695e2e4193db5e/checks|myapp>* (<https://github.com/myOwner/myRepo/commits/6dcb09b5b57875f334f61aebed695e2e4193db5e|6dcb09b...>) to *<https://github.com/myOwner/myRepo/deployments?environment=staging#activity-log|staging>* :shipit:",
+          "type": "mrkdwn",
+        },
+        "type": "section",
+      },
+      Object {
+        "type": "divider",
+      },
+      Object {
+        "text": Object {
+          "emoji": true,
+          "text": "\`\`\`
+Fix all the bugs
+\`\`\`",
+          "type": "plain_text",
+        },
+        "type": "section",
+      },
+      Object {
+        "type": "divider",
+      },
+      Object {
+        "accessory": Object {
+          "alt_text": "avatar_url",
+          "image_url": "https://github.com/images/error/octocat_happy.gif",
+          "type": "image",
+        },
+        "fields": Array [
+          Object {
+            "text": ":books: *Repository:* <https://github.com/myOwner/myRepo|myRepo>",
+            "type": "mrkdwn",
+          },
+          Object {
+            "text": ":person_in_steamy_room: *Author:* Monalisa Octoca <https://github.com/octocat|@octocat>",
+            "type": "mrkdwn",
+          },
+          Object {
+            "text": ":beer: *Commit:* <https://github.com/octocat/Hello-World/commit/6dcb09b5b57875f334f61aebed695e2e4193db5e|6dcb09b>",
+            "type": "mrkdwn",
+          },
+          Object {
+            "text": ":point_left: *Deployment ID:* 145988746",
+            "type": "mrkdwn",
+          },
+        ],
+        "type": "section",
+      },
+      Object {
+        "type": "divider",
+      },
+      Object {
+        "text": Object {
+          "emoji": true,
+          "text": "my fake error (error code 1) \`stderr\`: \`\`\` stderr output \`\`\` \`stdout\`: \`\`\` stdeout output \`\`\`",
+          "type": "plain_text",
+        },
+        "type": "section",
+      },
+      Object {
+        "type": "divider",
+      },
+    ],
+    "channel": "fakeChannel",
+    "text": "Error deploying myapp to staging",
+    "token": "fakeToken",
+  },
+]
+`;
+
+exports[`slack notify deployment success  1`] = `
+Array [
+  Object {
+    "blocks": Array [
+      Object {
+        "text": Object {
+          "text": "I have deployed *<https://github.com/Codertocat/Hello-World/commit/6dcb09b5b57875f334f61aebed695e2e4193db5e/checks|myapp>* (<https://github.com/octocat/Hello-World/releases/v1.0.0|master>) to *<https://github.com/Codertocat/Hello-World/deployments?environment=production#activity-log|production>* :rocket:",
+          "type": "mrkdwn",
+        },
+        "type": "section",
+      },
+      Object {
+        "type": "divider",
+      },
+      Object {
+        "text": Object {
+          "emoji": true,
+          "text": "Description of the release",
+          "type": "plain_text",
+        },
+        "type": "section",
+      },
+      Object {
+        "type": "divider",
+      },
+      Object {
+        "accessory": Object {
+          "alt_text": "avatar_url",
+          "image_url": "https://github.com/images/error/octocat_happy.gif",
+          "type": "image",
+        },
+        "fields": Array [
+          Object {
+            "text": ":books: *Repository:* <https://github.com/Codertocat/Hello-World|myRepo>",
+            "type": "mrkdwn",
+          },
+          Object {
+            "text": ":person_in_steamy_room: *Author:* Monalisa Octoca <https://github.com/octocat|@octocat>",
+            "type": "mrkdwn",
+          },
+          Object {
+            "text": ":beer: *Commit:* <https://github.com/octocat/Hello-World/commit/6dcb09b5b57875f334f61aebed695e2e4193db5e|6dcb09b>",
+            "type": "mrkdwn",
+          },
+          Object {
+            "text": ":point_left: *Deployment ID:* 145988746",
+            "type": "mrkdwn",
+          },
+        ],
+        "type": "section",
+      },
+      Object {
+        "elements": Array [
+          Object {
+            "text": "*Application url:* <http://url|url>",
+            "type": "mrkdwn",
+          },
+        ],
+        "type": "context",
+      },
+      Object {
+        "type": "divider",
+      },
+    ],
+    "channel": "fakeChannel",
+    "text": "Deployed myapp to production",
+    "token": "fakeToken",
+  },
+]
+`;
